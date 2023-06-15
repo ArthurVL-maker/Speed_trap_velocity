@@ -12,11 +12,13 @@
 # Authors: Arthur van Lerberghe (avanlerberghe1@sheffield.ac.uk) & Kin Shing Oswald Li (ksoli1@sheffield.ac.uk)
 # ----------------------------------------------------------------------------------------------------------
 # Imported modules:
+from pathlib import Path
 import pandas as pd
 import numpy as np
 
 
 def speed_trap_velocity(raw_file):
+    # Inputs:
     trap_distance = 50  # Distance between speed traps, mm
     trigger_voltage = 24  # Voltage level triggering pulse, V
 
@@ -36,5 +38,10 @@ def speed_trap_velocity(raw_file):
     # Calculate the velocity of the striker bar:
     difference = abs(back_trigger_time - front_trigger_time)  # Difference between trigger times, s
     velocity = (trap_distance / difference) / 10 ** 3  # Velocity of striker bar, m/s
+
+    # Print results:
+    file = Path(raw_file)
+    print('-' * 80 + '\n' + f"PROCESSING STRIKER VELOCITY OF: {file.parts[-1].split('.')[0]} " '\n' + '-' * 80)
+    print(f'Original file path:{file}')
 
     return f'Velocity of striker bar: {round(velocity, 3)} m/s'
