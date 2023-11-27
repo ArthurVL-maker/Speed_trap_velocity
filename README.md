@@ -1,4 +1,4 @@
-# speed_trap_velocity.py - A Python algorithm for calculating the velocity of the striker bar during split-Hopkinson pressure bar experiments.
+# speed_trap_velocity.py - A Python algorithm for calculating the velocity of the striker bar during split-Hopkinson pressure bar experiments
 
 #### DESCRIPTION: 
 Uses the recorded signals from the speed trap to calculate the velocity of the striker bar during split-Hopkinson pressure bar experiments.
